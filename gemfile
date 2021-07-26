@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+ruby '2.6.3'
+gem 'pry'
+gem 'csv'
+gem 'sinatra'
+gem 'rack'
+gem 'shotgun'
