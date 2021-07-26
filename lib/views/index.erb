@@ -5,12 +5,6 @@
   <body>
     <h1>Mon super site de gossip, les gossips arrivent bientot !</h1>
   <a href="/gossips/new/">tu peux aller créer ton potin ici</a>
+    <a href="/gossips/all/">tu peux accéder à tous les potins ici</a>
     </body>
 </html>
-
-<% gossips.each do |gossip| %> # % permet d'exécuter du ruby dans un fichier html
-        <p>
-          <%= gossip.author %><br/>
-          <%= gossip.content %>
-        </p>
-      <% end %>

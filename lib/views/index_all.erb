@@ -1,0 +1,11 @@
+
+<% gossips.each_with_index do |gossip| %>
+        <p>
+           <%  url = "/gossips/" + "#{gossips.index(gossip) + 1}" %>
+          <a href=<%= url %>>lien vers le gossip ci_dessous</a>
+       <%= gossip.author %><br/>
+        <%= gossip.content %>
+        </p>
+      <% end %>
+
+<a href="/">lien pour revenir à la page d'accueil </a>

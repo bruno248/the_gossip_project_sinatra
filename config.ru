@@ -1,7 +1,6 @@
 require 'bundler'
 Bundler.require
-require 'rack'
 
 $:.unshift File.expand_path("./../lib", __FILE__)
-require 'controller'
+require_relative 'lib/controller'
 run ApplicationController

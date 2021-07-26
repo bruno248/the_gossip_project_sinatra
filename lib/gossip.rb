@@ -2,7 +2,7 @@ class Gossip
 require 'bundler'
 Bundler.require
 
-	attr_accessor:author, :content
+	attr_accessor :author, :content
 
 	def initialize(author, content)
   		@author = author
@@ -22,28 +22,16 @@ Bundler.require
 			end
 	return all_gossips
 	end
+
+	def self.find(id)
+		i = 0
+		CSV.read("./db/gossip.csv").each do |csv_line
+		if i == id
+			gossip_find = Gossip.new(csv_line[0], csv_line[1])
+		end
+			return gossip_find
+				i +=1
+			end
+	end
 	
 end
-
-
-  
-
-# 	
-# 	def self.erase(auteur) # revoir
-# 	  all_gossips = []
-#   file = File.foreach("./lib/db/gossip.csv") do |line|
-#     if line.split(',')[0] == auteur
-#     else
-#     gossip_provisoire = Gossip.new(line.split(',')[0], line.split(',')[1])
-#     all_gossips << gossip_provisoire
-#     end
-#   end
-# #   file = File.open("./lib/db/gossip.csv", "w")
-# #   all_gossips.each do |gossip|
-# #     file.puts("#{gossip.author},#{gossip.content}")
-# #   end
-# #   file.close
-#   end
-# 	
-# 	
-#  end
